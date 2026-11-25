@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curso Completo: Como Funciona a Reforma Tributária do Zero ao Avançado (EC 132/2023 & LC 214/2025)</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --bg-alt: #111827;
+      --card: #1e293b;
+      --card-deep: #0f172a;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-dark: #0284c7;
+      --green: #10b981;
+      --amber: #f59e0b;
+      --red: #ef4444;
+      --purple: #a855f7;
+      --border: #334155;
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    /* Header / Hero */
+    header.course-hero {
+      background: linear-gradient(135deg, #090d16 0%, #1e3a8a 55%, #0369a1 100%);
+      padding: 56px 24px 48px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.18);
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    header.course-hero h1 {
+      font-size: 2.4rem;
+      max-width: 1000px;
+      margin: 0 auto 14px;
+      line-height: 1.22;
+    }
+    header.course-hero p {
+      color: #cbd5e1;
+      max-width: 860px;
+      margin: 0 auto 24px;
+      font-size: 1.08rem;
+    }
+    .nav-links-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.92rem;
+      transition: all 0.2s;
+    }
+    .btn-primary { background: var(--amber); color: #090d16; }
+    .btn-outline { background: rgba(255,255,255,0.08); color: #fff; border: 1px solid var(--border); }
+    .btn:hover { transform: translateY(-2px); }
+
+    /* Layout with Sidebar */
+    .layout {
+      max-width: 1360px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 32px;
+      padding: 32px 20px 80px;
+    }
+    @media (max-width: 980px) {
+      .layout { grid-template-columns: 1fr; }
+      aside.toc { position: static !important; }
+    }
+    aside.toc {
+      position: sticky;
+      top: 24px;
+      align-self: start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      max-height: calc(100vh - 48px);
+      overflow-y: auto;
+    }
+    aside.toc h3 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--primary);
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+    aside.toc ul { list-style: none; }
+    aside.toc li { margin-bottom: 6px; }
+    aside.toc a {
+      display: block;
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 0.88rem;
+      padding: 7px 10px;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+    aside.toc a:hover {
+      background: rgba(56, 189, 248, 0.15);
+      color: #fff;
+    }
+
+    /* Main Content Modules */
+    main.course-content { min-width: 0; }
+    .module {
+      background: var(--card-deep);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 40px;
+      scroll-margin-top: 24px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .mod-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: #090d16;
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 4px 12px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .module h2 {
+      font-size: 1.8rem;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .mod-intro {
+      color: var(--muted);
+      font-size: 1.04rem;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+    }
+    .module h3 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin: 28px 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .module p {
+      margin-bottom: 14px;
+      color: #e2e8f0;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin: 18px 0;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin: 18px 0;
+    }
+    .box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .box h4 {
+      font-size: 1.08rem;
+      margin-bottom: 10px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .pill-sm {
+      font-size: 0.74rem;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+    .pill-blue { background: rgba(56,189,248,0.18); color: var(--primary); border: 1px solid var(--primary); }
+    .pill-green { background: rgba(16,185,129,0.18); color: var(--green); border: 1px solid var(--green); }
+    .pill-amber { background: rgba(245,158,11,0.18); color: var(--amber); border: 1px solid var(--amber); }
+    .pill-red { background: rgba(239,68,68,0.18); color: var(--red); border: 1px solid var(--red); }
+    .pill-purple { background: rgba(168,85,247,0.18); color: var(--purple); border: 1px solid var(--purple); }
+
+    /* Didactic Callouts */
+    .didactic-note {
+      background: rgba(56, 189, 248, 0.08);
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin: 18px 0;
+    }
+    .didactic-note.green {
+      background: rgba(16, 185, 129, 0.08);
+      border-left-color: var(--green);
+    }
+    .didactic-note.amber {
+      background: rgba(245, 158, 11, 0.08);
+      border-left-color: var(--amber);
+    }
+    .didactic-note.red {
+      background: rgba(239, 68, 68, 0.08);
+      border-left-color: var(--red);
+    }
+    .didactic-note strong.title {
+      display: block;
+      font-size: 1.02rem;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    /* Formula & Math Walk-through */
+    .math-walk {
+      background: #070a12;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--amber);
+      border-radius: 10px;
+      padding: 18px 22px;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 0.94rem;
+      color: #fde68a;
+      margin: 16px 0;
+      overflow-x: auto;
+    }
+
+    /* Visual Step Chains */
+    .visual-board {
+      background: #070b14;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 20px 0;
+    }
+    .visual-board .board-title {
+      text-align: center;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.6px;
+      margin-bottom: 20px;
+    }
+    .chain-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      justify-content: center;
+      gap: 12px;
+    }
+    .chain-card {
+      background: var(--card);
+      border: 2px solid var(--primary);
+      border-radius: 12px;
+      padding: 16px;
+      flex: 1 1 210px;
+      max-width: 280px;
+    }
+    .chain-card.green { border-color: var(--green); }
+    .chain-card.amber { border-color: var(--amber); }
+    .chain-card.purple { border-color: var(--purple); }
+    .chain-card.red { border-color: var(--red); }
+    .chain-card .step-num {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .chain-card h5 {
+      font-size: 1.02rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .chain-card .line {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      padding: 3px 0;
+      border-bottom: 1px dashed rgba(255,255,255,0.08);
+    }
+    .chain-card .line.highlight {
+      font-weight: 700;
+      color: var(--green);
+      border-bottom: none;
+      margin-top: 6px;
+      font-size: 0.9rem;
+    }
+    .chain-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--muted);
+      font-weight: bold;
+      padding: 0 4px;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0;
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    th, td {
+      padding: 13px 16px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      font-size: 0.93rem;
+    }
+    th {
+      background: #070b14;
+      color: var(--primary);
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.5px;
+    }
+    .num { text-align: right; font-family: monospace; font-weight: 600; }
+
+    ul.detail-list {
+      list-style: none;
+      margin: 10px 0;
+    }
+    ul.detail-list li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 9px;
+      color: #e2e8f0;
+      font-size: 0.95rem;
+    }
+    ul.detail-list li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: bold;
+    }
+    ul.detail-list.cross li::before {
+      content: "✖";
+      color: var(--red);
+    }
+
+    /* Interactive Lab & Quiz */
+    .lab-box {
+      background: linear-gradient(145deg, #1e293b, #090d16);
+      border: 1px solid var(--primary);
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 20px;
+    }
+    .lab-inputs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .lab-inputs label {
+      display: block;
+      font-size: 0.83rem;
+      color: var(--muted);
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    .lab-inputs input {
+      width: 100%;
+      padding: 10px 12px;
+      background: #070b14;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: #fff;
+      font-family: monospace;
+      font-size: 1rem;
+    }
+    .quiz-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .quiz-item h4 {
+      margin-bottom: 12px;
+      color: #fff;
+      font-size: 1.04rem;
+    }
+    .quiz-btn {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: #0f172a;
+      color: #e2e8f0;
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      font-size: 0.93rem;
+      transition: all 0.15s;
+    }
+    .quiz-btn:hover {
+      border-color: var(--primary);
+      background: rgba(56, 189, 248, 0.1);
+    }
+    .quiz-feedback {
+      display: none;
+      margin-top: 10px;
+      padding: 12px 15px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+    }
+    footer {
+      text-align: center;
+      padding: 36px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--primary); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header class="course-hero">
+  <span class="hero-tag">Apostila Digital Interativa &bull; Do Zero ao Avançado (EC 132/2023 &amp; LC 214/2025)</span>
+  <h1>🎓 Curso Completo: Como Funciona a Reforma Tributária no Brasil</h1>
+  <p>Um guia passo a passo, ultra-detalhado e didático para quem quer <strong>aprender de verdade</strong> cada conceito, fórmula matemática, regra de crédito, Split Payment, Cashback, Simples Nacional, Imóveis e transição 2026–2033.</p>
+  <div class="nav-links-top">
+    <a class="btn btn-primary" href="#mod1">Começar pelo Módulo 1 (Do Zero)</a>
+    <a class="btn btn-outline" href="./index.html">⬅ Voltar ao Portal Mestre</a>
+    <a class="btn btn-outline" href="./etapa-07-construcao-civil-exemplos-praticos/construcao-civil-reforma-tributaria.html">🏗️ Ver Dossiê da Construção Civil</a>
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- SUMÁRIO LATERAL FIXO -->
+  <aside class="toc">
+    <h3>📚 Sumário do Curso</h3>
+    <ul>
+      <li><a href="#mod1"><strong>Módulo 1:</strong> O Problema Antigo e a Armadilha do Cálculo "Por Dentro"</a></li>
+      <li><a href="#mod2"><strong>Módulo 2:</strong> O Novo Modelo — IVA Dual (CBS + IBS) e Imposto Seletivo</a></li>
+      <li><a href="#mod3"><strong>Módulo 3:</strong> Como Funciona o Crédito Amplo (A Cadeia Passo a Passo)</a></li>
+      <li><a href="#mod4"><strong>Módulo 4:</strong> Split Payment Inteligente e Cobrança no Destino</a></li>
+      <li><a href="#mod5"><strong>Módulo 5:</strong> Cesta Básica Zero (0%) e Cashback do Povo</a></li>
+      <li><a href="#mod6"><strong>Módulo 6:</strong> Simples Nacional, MEI, Serviços, Agro e Imóveis</a></li>
+      <li><a href="#mod7"><strong>Módulo 7:</strong> Cronograma Ano a Ano (2026 a 2033)</a></li>
+      <li><a href="#mod8"><strong>Módulo 8:</strong> Laboratório Interativo + Quiz de Fixação</a></li>
+    </ul>
+  </aside>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="course-content">
+
+    <!-- =================================================================== -->
+    <!-- MÓDULO 1 -->
+    <!-- =================================================================== -->
+    <article class="module" id="mod1">
+      <span class="mod-badge">Módulo 01 &bull; Fundamentos</span>
+      <h2>Por Que o Sistema Antigo Era Tão Complexo? (Explicado do Zero)</h2>
+      <p class="mod-intro">Antes de aprender os novos impostos, você precisa entender o que está sendo consertado. No Brasil, existem três grandes bases sobre as quais o governo cobra tributos: <strong>Renda</strong>, <strong>Patrimônio</strong> e <strong>Consumo</strong>. A Reforma Tributária da EC 132/2023 muda profundamente a tributação sobre o <strong>Consumo</strong>.</p>
+
+      <h3>1.1. O Mapa Geral: O Que Muda e o Que NÃO Muda?</h3>
+      <div class="grid-3">
+        <div class="box" style="border-color:var(--primary);">
+          <h4>1. Consumo (Foco Total!) <span class="pill-sm pill-blue">Muda 100%</span></h4>
+          <p style="font-size:0.9rem; color:var(--muted);">Quando você compra um produto, contrata um serviço, aluga um bem ou importa algo. Os <strong>5 tributos antigos (PIS, COFINS, IPI, ICMS e ISS)</strong> são extintos/substituídos por <strong>CBS, IBS e IS</strong>.</p>
+        </div>
+        <div class="box" style="border-color:var(--amber);">
+          <h4>2. Patrimônio <span class="pill-sm pill-amber">Ajustes Pontuais</span></h4>
+          <p style="font-size:0.9rem; color:var(--muted);"><strong>IPVA:</strong> passa a cobrar jatos, helicópteros, iates e lanchas.<br/><strong>ITCMD (Herança):</strong> torna-se obrigatoriamente progressivo.<br/><strong>IPTU:</strong> atualização de base por decreto conforme lei municipal.</p>
+        </div>
+        <div class="box">
+          <h4>3. Renda e Folha <span class="pill-sm pill-green">Não Mudam Aqui</span></h4>
+          <p style="font-size:0.9rem; color:var(--muted);"><strong>Imposto de Renda (IRPF e IRPJ), CSLL, INSS Patronal e FGTS</strong> não fazem parte da EC 132/2023. Continuam seguindo suas próprias leis.</p>
+        </div>
+      </div>
+
+      <h3>1.2. A Armadilha Matemática do Cálculo "Por Dentro" vs. "Por Fora"</h3>
+      <p>No sistema antigo, o Brasil usava uma conta que quase nenhum outro país do mundo usa: o <strong>cálculo "por dentro"</strong>. No ICMS, no PIS e na COFINS, <em>o valor do próprio imposto fazia parte da base de cálculo sobre a qual o imposto era cobrado</em>!</p>
+
+      <div class="grid-2">
+        <div class="box" style="border-color:var(--red);">
+          <h4>❌ Como Era ANTES: Cálculo "Por Dentro" <span class="pill-sm pill-red">Opaco</span></h4>
+          <p style="font-size:0.9rem;">Imagine uma mercadoria cujo valor líquido para a empresa é <strong>R$ 82,00</strong> e a alíquota nominal do ICMS é <strong>18%</strong>:</p>
+          <div class="math-walk">
+            Preço Final = R$ 82,00 &divide; (1 - 0,18)<br/>
+            Preço Final = R$ 82,00 &divide; 0,82 = <strong>R$ 100,00</strong><br/>
+            Imposto cobrado = R$ 18,00<br/>
+            -----------------------------------------<br/>
+            Qual foi o imposto REAL sobre os R$ 82,00?<br/>
+            R$ 18,00 &divide; R$ 82,00 = <strong>21,95%!</strong>
+          </div>
+          <p style="font-size:0.88rem; color:var(--muted);">A lei dizia 18%, mas como os 18% incidiam também sobre os próprios R$ 18,00 de imposto, a carga efetiva real era de <strong>21,95%</strong>!</p>
+        </div>
+
+        <div class="box" style="border-color:var(--green);">
+          <h4>✅ Como Fica AGORA: Cálculo "Por Fora" <span class="pill-sm pill-green">Transparente</span></h4>
+          <p style="font-size:0.9rem;">Na Reforma Tributária (CBS e IBS), o imposto é calculado <strong>"por fora"</strong>, direto sobre o preço líquido do produto ou serviço:</p>
+          <div class="math-walk">
+            Preço Líquido do Produto = <strong>R$ 100,00</strong><br/>
+            (+) CBS Federal (ex.: 8,8%) = R$ 8,80<br/>
+            (+) IBS Est./Mun. (ex.: 17,7%) = R$ 17,70<br/>
+            -----------------------------------------<br/>
+            (=) Total da Nota Fiscal = <strong>R$ 126,50</strong><br/>
+            Imposto Real sobre R$ 100,00 = <strong>Exatos 26,50%!</strong>
+          </div>
+          <p style="font-size:0.88rem; color:var(--muted);">Nem a CBS entra na base do IBS, nem o IBS entra na base da CBS, nem eles entram na própria base. Transparência matemática absoluta!</p>
+        </div>
+      </div>
+
+      <h3>1.3. Os Outros 3 Defeitos Graves que Travavam o Brasil</h3>
+      <ul class="detail-list cross">
+        <li><strong>Efeito Cascata (Imposto sobre Imposto):</strong> O ISS (serviços) não gerava crédito nenhum, e o ICMS só gerava "crédito físico" (matéria-prima direta). Se uma fábrica contratasse segurança, software, consultoria, frete ou comprasse móveis e computadores, o imposto pago nessas compras virava custo escondido dentro do preço do produto seguinte.</li>
+        <li><strong>Guerra Fiscal (Cobrança na Origem):</strong> Como parte do ICMS e quase todo o ISS ficavam no estado/município onde a empresa estava sediada, governadores e prefeitos davam descontos secretos para atrair galpões, distorcendo a logística nacional.</li>
+        <li><strong>Mais de 5.500 Leis Diferentes e Briga "Mercadoria vs. Serviço":</strong> Uma empresa que vendia para todo o Brasil precisava seguir 27 regulamentos estaduais de ICMS e 5.570 códigos tributários municipais de ISS, além de enfrentar processos para saber se software, streaming ou embalagem sob encomenda pagava ICMS ou ISS.</li>
+      </ul>
+    </article>
+
+    <!-- =================================================================== -->
+    <!-- MÓDULO 2 -->
+    <!-- =================================================================== -->
+    <article class="module" id="mod2">
+      <span class="mod-badge">Módulo 02 &bull; Os Novos Tributos</span>
+      <h2>A Anatomia do Novo Sistema: IVA Dual (CBS + IBS) e Imposto Seletivo (IS)</h2>
+      <p class="mod-intro">Mais de 170 países utilizam o <strong>IVA (Imposto sobre Valor Agregado)</strong>. Como o Brasil é uma Federação em que União, Estados e Municípios têm autonomia constitucional, adotamos o <strong>IVA Dual</strong> (dois tributos gêmeos) acompanhado do <strong>Imposto Seletivo</strong>.</p>
+
+      <div class="visual-board">
+        <div class="board-title">Painel Visual: Como os 5 Tributos Antigos Viram os 3 Novos Tributos</div>
+        <div class="chain-row">
+          <div class="chain-card amber">
+            <div class="step-num">Esfera Federal</div>
+            <h5>PIS + COFINS + IPI</h5>
+            <p style="font-size:0.84rem; color:var(--muted);">Extintos em 2027 (IPI é zerado, mantido apenas para concorrentes da Zona Franca de Manaus).</p>
+          </div>
+          <div class="chain-arrow">&rarr;</div>
+          <div class="chain-card green">
+            <div class="step-num">Novo IVA Federal</div>
+            <h5>1. CBS</h5>
+            <p style="font-size:0.84rem; color:var(--muted);"><strong>Contribuição sobre Bens e Serviços</strong>. Arrecadada pela Receita Federal (União).</p>
+          </div>
+          <div class="chain-card purple">
+            <div class="step-num">Regulatório Federal</div>
+            <h5>2. Imposto Seletivo (IS)</h5>
+            <p style="font-size:0.84rem; color:var(--muted);"><strong>"Imposto do Pecado"</strong>: Apenas sobre itens nocivos à saúde ou ao meio ambiente.</p>
+          </div>
+        </div>
+        <div style="height:16px;"></div>
+        <div class="chain-row">
+          <div class="chain-card amber">
+            <div class="step-num">Esfera Estadual e Municipal</div>
+            <h5>ICMS (27 UFs) + ISS (5.570 Cidades)</h5>
+            <p style="font-size:0.84rem; color:var(--muted);">Reduzidos gradualmente de 2029 a 2032 e extintos em 1º de janeiro de 2033.</p>
+          </div>
+          <div class="chain-arrow">&rarr;</div>
+          <div class="chain-card" style="max-width:572px;">
+            <div class="step-num">Novo IVA Subnacional Unificado</div>
+            <h5>3. IBS (Imposto sobre Bens e Serviços)</h5>
+            <p style="font-size:0.84rem; color:var(--muted);">Soma a parcela do Estado + a parcela do Município de destino. Administrado pelo <strong>Comitê Gestor do IBS</strong> com uma única lei nacional (LC 214/2025).</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>2.1. O Que Significa Dizer que CBS e IBS São "Tributos Gêmeos"?</h3>
+      <p>Pelo art. 149-B da Constituição Federal, a <strong>CBS</strong> e o <strong>IBS</strong> obedecem exatamente às mesmas regras em todo o território nacional:</p>
+      <ul class="detail-list">
+        <li><strong>Fato Gerador Único e Amplo:</strong> Incidem sobre qualquer operação onerosa com <em>bens materiais ou imateriais, inclusive direitos, ou com serviços</em> (acabou para sempre a dúvida se algo é mercadoria, serviço, software, locação ou licenciamento!).</li>
+        <li><strong>Mesma Base de Cálculo:</strong> O valor da operação ("por fora").</li>
+        <li><strong>Mesmos Regimes Diferenciados:</strong> Se a lei dá 60% de desconto na alíquota da Saúde ou da Educação, ou 50% na Construção Civil, esse desconto vale obrigatoriamente tanto para a CBS quanto para o IBS.</li>
+      </ul>
+
+      <h3>2.2. Detalhando o Imposto Seletivo (IS — "Imposto do Pecado")</h3>
+      <p>O <strong>Imposto Seletivo (IS)</strong> entra em vigor em <strong>2027</strong> e incide (em regra, uma única vez — monofásico) exclusivamente sobre 6 grupos definidos na Lei Complementar nº 214/2025:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Produto / Serviço Atingido pelo IS</th>
+            <th>Como Funciona a Cobrança na LC 214/2025</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. Cigarros e Produtos Fumígenos</strong></td>
+            <td>Alíquota específica (por maço/unidade) + alíquota <em>ad valorem</em> (% sobre o valor).</td>
+          </tr>
+          <tr>
+            <td><strong>2. Bebidas Alcoólicas</strong></td>
+            <td>Alíquota progressiva conforme o teor alcoólico da bebida (quanto maior o teor, maior o imposto).</td>
+          </tr>
+          <tr>
+            <td><strong>3. Bebidas Açucaradas</strong></td>
+            <td>Refrigerantes e bebidas com açúcar adicionado.</td>
+          </tr>
+          <tr>
+            <td><strong>4. Veículos, Embarcações e Aeronaves Poluentes</strong></td>
+            <td>Alíquota varia conforme potência, eficiência energética, reciclabilidade e pegada de carbono (caminhões de carga e ônibus de transporte público são <strong>isentos</strong> de IS!).</td>
+          </tr>
+          <tr>
+            <td><strong>5. Extração de Bens Minerais</strong></td>
+            <td>Minério de ferro, petróleo e gás natural, com alíquota máxima limitada a <strong>0,25%</strong>.</td>
+          </tr>
+          <tr>
+            <td><strong>6. Concursos de Prognósticos e Fantasy Sport</strong></td>
+            <td>Apostas esportivas (<em>Bets</em>) físicas e on-line e jogos de fantasia.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="didactic-note amber">
+        <strong class="title">⚠️ Regra Importante de Cálculo do Imposto Seletivo:</strong>
+        O Imposto Seletivo (IS) <strong>entra na base de cálculo do IBS e da CBS</strong>! Exemplo: Se uma bebida custa R$ 100,00 na fábrica e sofre R$ 20,00 de Imposto Seletivo, a base de cálculo para cobrar o IBS e a CBS será <strong>R$ 120,00</strong> (R$ 100 + R$ 20).
+      </div>
+    </article>
+
+    <!-- =================================================================== -->
+    <!-- MÓDULO 3 -->
+    <!-- =================================================================== -->
+    <article class="module" id="mod3">
+      <span class="mod-badge">Módulo 03 &bull; Não Cumulatividade Plena</span>
+      <h2>Como Funciona o Crédito Tributário na Prática (Desenho da Cadeia)</h2>
+      <p class="mod-intro">Se você entender este módulo, você entenderá 80% da Reforma Tributária. No IVA Dual, <strong>imposto pago na compra não é custo para empresas do regime regular: é CRÉDITO (dinheiro a descontar)!</strong></p>
+
+      <h3>3.1. A Regra de Ouro: Débito nas Vendas (-) Crédito nas Compras</h3>
+      <div class="math-walk">
+        1. Toda vez que sua empresa COMPRA algo para a atividade dela &rarr; O IBS/CBS pago vira <strong>CRÉDITO</strong>.<br/>
+        2. Toda vez que sua empresa VENDE seu produto ou serviço &rarr; O IBS/CBS cobrado do cliente vira <strong>DÉBITO</strong>.<br/>
+        3. Quanto sua empresa entrega ao Governo? &rarr; Apenas a diferença: <strong>IMPOSTO A PAGAR = DÉBITO - CRÉDITO</strong>.
+      </div>
+
+      <h3>3.2. Acompanhe o Desenho de Uma Cadeia Completa (Alíquota Ilustrativa de 25%)</h3>
+      <p>Vamos ver como uma árvore vira uma mesa vendida no shopping, usando uma alíquota redonda de <strong>25% de IVA (CBS + IBS)</strong> para você enxergar a matemática sem esforço:</p>
+
+      <div class="visual-board">
+        <div class="board-title">Cadeia Produtiva Passo a Passo — Zero Imposto em Cascata</div>
+        <div class="chain-row">
+          <!-- Elo 1 -->
+          <div class="chain-card">
+            <div class="step-num">Elo 1: Madeireira</div>
+            <h5>Vende Madeira p/ Fábrica</h5>
+            <div class="line"><span>Preço Líquido:</span><span>R$ 100,00</span></div>
+            <div class="line"><span>(+) IVA 25%:</span><span>R$ 25,00</span></div>
+            <div class="line"><span>Total da NF:</span><span>R$ 125,00</span></div>
+            <div class="line"><span>Crédito anterior:</span><span>R$ 0,00</span></div>
+            <div class="line highlight"><span>Paga ao Governo:</span><span>R$ 25,00</span></div>
+          </div>
+
+          <div class="chain-arrow">&rarr;</div>
+
+          <!-- Elo 2 -->
+          <div class="chain-card amber">
+            <div class="step-num">Elo 2: Fábrica de Móveis</div>
+            <h5>Vende Mesa p/ Loja</h5>
+            <div class="line"><span>Preço Líquido:</span><span>R$ 300,00</span></div>
+            <div class="line"><span>(+) Débito IVA 25%:</span><span>R$ 75,00</span></div>
+            <div class="line"><span>Total da NF:</span><span>R$ 375,00</span></div>
+            <div class="line"><span>(-) Crédito Madeira:</span><span>-R$ 25,00</span></div>
+            <div class="line highlight"><span>Paga ao Governo:</span><span>R$ 50,00</span></div>
+          </div>
+
+          <div class="chain-arrow">&rarr;</div>
+
+          <!-- Elo 3 -->
+          <div class="chain-card purple">
+            <div class="step-num">Elo 3: Loja de Varejo</div>
+            <h5>Vende p/ Consumidor</h5>
+            <div class="line"><span>Preço Líquido:</span><span>R$ 500,00</span></div>
+            <div class="line"><span>(+) Débito IVA 25%:</span><span>R$ 125,00</span></div>
+            <div class="line"><span>Total no Caixa:</span><span>R$ 625,00</span></div>
+            <div class="line"><span>(-) Crédito Fábrica:</span><span>-R$ 75,00</span></div>
+            <div class="line highlight"><span>Paga ao Governo:</span><span>R$ 50,00</span></div>
+          </div>
+
+          <div class="chain-arrow">&rarr;</div>
+
+          <!-- Resumo -->
+          <div class="chain-card green">
+            <div class="step-num">Resultado Final</div>
+            <h5>Consumidor Final (PF)</h5>
+            <div class="line"><span>Valor do Produto:</span><span>R$ 500,00</span></div>
+            <div class="line"><span>Imposto Total (25%):</span><span>R$ 125,00</span></div>
+            <div class="line"><span>Soma Arrecadada:</span><span>25+50+50</span></div>
+            <div class="line highlight"><span>Total Governo:</span><span>R$ 125,00!</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="didactic-note green">
+        <strong class="title">💡 O Que Você Acabou de Aprender com Esse Desenho?</strong>
+        Repare na Fábrica (Elo 2): ela comprou a madeira por R$ 100,00 (líquidos) e vendeu a mesa por R$ 300,00 (líquidos). Ou seja, ela <strong>agregou R$ 200,00 de valor</strong>. Quanto ela pagou de imposto ao governo? <strong>R$ 50,00</strong>, que é exatamente <strong>25% sobre os R$ 200,00 que ela agregou</strong>! Nenhum centavo de imposto foi cobrado duas vezes.
+      </div>
+
+      <h3>3.3. Tabela Prática: O Que Dá Direito a Crédito e o Que NÃO Dá? (LC 214/2025, arts. 47 a 57)</h3>
+      <div class="grid-2">
+        <div class="box" style="border-color:var(--green);">
+          <h4>✅ TUDO ISSO GERA CRÉDITO DE IBS E CBS</h4>
+          <ul class="detail-list">
+            <li>Matérias-primas, embalagens e mercadorias para revenda.</li>
+            <li><strong>Energia elétrica, água tratada, internet e telefone</strong> da empresa.</li>
+            <li><strong>Aluguel</strong> de escritório, loja, galpão ou máquinas.</li>
+            <li><strong>Fretes e transportes</strong> contratados.</li>
+            <li><strong>Serviços de TI, softwares (SaaS), nuvem, contabilidade, advocacia, limpeza, segurança e marketing.</strong></li>
+            <li>Material de escritório, limpeza, uniformes de trabalho e EPIs.</li>
+            <li><strong>Compra de Máquinas, Equipamentos, Computadores e Veículos de Trabalho (Ativo Imobilizado)</strong> &rarr; Crédito 100% imediato (acabou a espera de 48 meses!).</li>
+          </ul>
+        </div>
+
+        <div class="box" style="border-color:var(--red);">
+          <h4>❌ O QUE NÃO GERA CRÉDITO</h4>
+          <ul class="detail-list cross">
+            <li><strong>Bens e serviços de Uso ou Consumo Pessoal</strong> (art. 57 da LC 214/2025): joias, obras de arte, bebidas alcoólicas, tabaco, armas/munições (exceto empresas de segurança), serviços de estética, lazer, hotelaria/alimentação (salvo exceções legais de viagem a trabalho/eventos).</li>
+            <li><strong>Folha de Pagamento (Salários CLT, Pró-labore, FGTS, INSS):</strong> Como trabalho com vínculo empregatício não sofre incidência de IBS/CBS, não há imposto para creditar.</li>
+            <li><strong>Aquisições com Alíquota Zero, Isentas ou de Não Contribuintes (ex.: MEI/Nanoempreendedor):</strong> Se nenhum imposto foi cobrado na nota de entrada, não há imposto a descontar.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- =================================================================== -->
+    <!-- MÓDULO 4 -->
+    <!-- =================================================================== -->
+    <article class="module" id="mod4">
+      <span class="mod-badge">Módulo 04 &bull; Tecnologia &amp; Destino</span>
+      <h2>Split Payment Inteligente e Cobrança 100% no Destino</h2>
+      <p class="mod-intro">No sistema antigo, uma empresa podia emitir uma "nota fria" (não pagar o imposto ao governo) e mesmo assim o comprador tomava o crédito. Na Reforma Tributária, <strong>o crédito só nasce se o imposto da etapa anterior for efetivamente pago</strong>. Para tornar isso automático, nasceu o <strong>Split Payment</strong>.</p>
+
+      <h3>4.1. Como Funciona o Split Payment Inteligente Passo a Passo?</h3>
+      <p>Muita gente acha que o banco simplesmente vai "morder 26,5%" de toda venda da empresa e deixá-la sem capital de giro. <strong>Isso é um mito!</strong> Veja como o <strong>Split Payment Inteligente</strong> (art. 32 da LC 214/2025) abate primeiro os créditos que a empresa já tem:</p>
+
+      <div class="visual-board">
+        <div class="board-title">Passo a Passo do Split Payment Inteligente em Uma Venda no PIX ou Cartão</div>
+        <div class="chain-row">
+          <div class="chain-card">
+            <div class="step-num">Passo 1: Situação Antes da Venda</div>
+            <h5>Loja Já Tem Créditos</h5>
+            <p style="font-size:0.85rem; color:var(--muted);">A loja já comprou mercadorias e pagou conta de luz no mês, acumulando <strong>R$ 200,00 de crédito</strong> no sistema da Receita/Comitê Gestor.</p>
+          </div>
+          <div class="chain-arrow">&rarr;</div>
+          <div class="chain-card amber">
+            <div class="step-num">Passo 2: Cliente Paga no PIX</div>
+            <h5>Venda de R$ 1.265,00</h5>
+            <p style="font-size:0.85rem; color:var(--muted);">Produto = R$ 1.000,00<br/>IBS/CBS na Nota = <strong>R$ 265,00</strong>.<br/>Cliente faz o PIX de R$ 1.265,00.</p>
+          </div>
+          <div class="chain-arrow">&rarr;</div>
+          <div class="chain-card purple">
+            <div class="step-num">Passo 3: Consulta em Milissegundos</div>
+            <h5>Banco Consulta o Fisco</h5>
+            <p style="font-size:0.85rem; color:var(--muted);">O Fisco responde ao Banco:<br/><em>"Débito é R$ 265, mas a loja já tem R$ 200 de crédito! Retenha só R$ 65,00!"</em></p>
+          </div>
+          <div class="chain-arrow">&rarr;</div>
+          <div class="chain-card green">
+            <div class="step-num">Passo 4: Divisão Automática</div>
+            <h5>Dinheiro na Conta</h5>
+            <p style="font-size:0.85rem; color:var(--muted);"><strong>R$ 1.200,00</strong> caem direto na conta da Loja!<br/><strong>R$ 65,00</strong> vão para o Governo. O imposto da nota está 100% quitado!</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>4.2. Cobrança no Destino: O Fim da Guerra Fiscal e da Substituição Tributária (ICMS-ST)</h3>
+      <ul class="detail-list">
+        <li><strong>Para onde vai o dinheiro do IBS?</strong> 100% para o <strong>Estado e o Município onde o comprador recebe o produto ou consome o serviço</strong>. Se uma fábrica de Santa Catarina vende para uma loja no Ceará, a alíquota aplicada é a do Ceará e o imposto vai para o Ceará.</li>
+        <li><strong>Fim do ICMS-ST (Substituição Tributária):</strong> Antes, a indústria ou o comércio era obrigado a pagar o ICMS de toda a cadeia antecipadamente antes mesmo de o produto ser vendido na prateleira. Com o IVA Dual e o Split Payment, <strong>acaba a Substituição Tributária</strong>: o imposto só é pago quando a venda realmente acontece!</li>
+      </ul>
+    </article>
+
+    <!-- =================================================================== -->
+    <!-- MÓDULO 5 -->
+    <!-- =================================================================== -->
+    <article class="module" id="mod5">
+      <span class="mod-badge">Módulo 05 &bull; Cidadania Fiscal</span>
+      <h2>Cesta Básica Nacional (Alíquota Zero) e Cashback do Povo</h2>
+      <p class="mod-intro">Para que as famílias trabalhadoras e de baixa renda paguem menos imposto sobre o consumo básico, a LC 214/2025 combina <strong>Alíquota Zero na comida essencial</strong> com <strong>Devolução de Imposto em Dinheiro (Cashback)</strong>.</p>
+
+      <div class="grid-2">
+        <div class="box" style="border-color:var(--green);">
+          <h4>🛒 Cesta Básica Nacional — Alíquota 0% <span class="pill-sm pill-green">Zero Imposto</span></h4>
+          <p style="font-size:0.9rem; color:var(--muted); margin-bottom:8px;">Itens do Anexo I da LC 214/2025 que pagam <strong>0% de IBS e 0% de CBS</strong> para toda a população:</p>
+          <ul class="detail-list">
+            <li><strong>Grãos e Base:</strong> Arroz, feijão, farinha de mandioca, trigo e milho, aveia, macarrão/massas, sal, açúcar e café.</li>
+            <li><strong>Proteínas:</strong> Carnes bovina, suína, ovina, caprina, aves (frango), ovos e peixes (exceto salmão, bacalhau, atum e ovas).</li>
+            <li><strong>Laticínios e Padaria:</strong> Leite líquido, leite em pó, fórmulas infantis, manteiga, queijos (mozarela, minas, prato, coalho, ricota, requeijão) e <strong>pão francês (pão comum)</strong>.</li>
+            <li><strong>Óleos e Hortifruti:</strong> Óleo de soja, óleo de babaçu, todas as frutas, verduras, legumes, raízes e tubérculos.</li>
+          </ul>
+        </div>
+
+        <div class="box" style="border-color:var(--primary);">
+          <h4>💸 Cashback Tributário (Devolução no CPF) <span class="pill-sm pill-blue">CadÚnico</span></h4>
+          <p style="font-size:0.9rem; color:var(--muted); margin-bottom:8px;">Para famílias inscritas no <strong>CadÚnico</strong> com renda per capita de até <strong>1/2 salário-mínimo</strong>:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Despesa da Família</th>
+                <th class="num">Devolução CBS</th>
+                <th class="num">Devolução IBS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Botijão de Gás (13 kg)</strong></td>
+                <td class="num" style="color:var(--green);">100%</td>
+                <td class="num">20% (mín.)</td>
+              </tr>
+              <tr>
+                <td><strong>Conta de Luz, Água e Esgoto</strong></td>
+                <td class="num" style="color:var(--green);">100%</td>
+                <td class="num">20% (mín.)</td>
+              </tr>
+              <tr>
+                <td><strong>Internet e Telefonia</strong></td>
+                <td class="num" style="color:var(--green);">100%</td>
+                <td class="num">20% (mín.)</td>
+              </tr>
+              <tr>
+                <td><strong>Supermercado, Roupas e Varejo (CPF na nota)</strong></td>
+                <td class="num">20%</td>
+                <td class="num">20% (mín.)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
+
+    <!-- =================================================================== -->
+    <!-- MÓDULO 6 -->
+    <!-- =================================================================== -->
+    <article class="module" id="mod6">
+      <span class="mod-badge">Módulo 06 &bull; Onde se Aplica na Prática</span>
+      <h2>Simples Nacional, MEI, Profissionais Liberais, Agronegócio e Imóveis</h2>
+      <p class="mod-intro">Veja como cada regime empresarial e cada setor da economia deve agir na Reforma Tributária.</p>
+
+      <h3>6.1. O Dilema Estratégico do Simples Nacional: "Simples Puro" vs. "Simples Híbrido"</h3>
+      <p>O <strong>Simples Nacional NÃO acaba</strong>. Mas agora o empresário do Simples tem duas opções para o IBS e a CBS:</p>
+
+      <div class="grid-2">
+        <div class="box" style="border-color:var(--green);">
+          <h4>Opção 1: Simples Puro (100% dentro do DAS) <span class="pill-sm pill-green">Ideal p/ B2C</span></h4>
+          <ul class="detail-list">
+            <li>Você continua pagando uma guia única (DAS) com alíquota reduzida.</li>
+            <li>Você <strong>não</strong> toma créditos de IBS/CBS nas suas compras.</li>
+            <li>Se você vender para outra empresa, ela só poderá aproveitar o pequeno crédito equivalente ao que você pagou dentro do DAS.</li>
+            <li><strong>Para quem é perfeito?</strong> Para quem vende para <strong>Pessoas Físicas (consumidor final)</strong>: padarias, restaurantes, lojas de roupas, salões de beleza, clínicas, oficinas B2C. O consumidor final não usa crédito mesmo!</li>
+          </ul>
+        </div>
+
+        <div class="box" style="border-color:var(--primary);">
+          <h4>Opção 2: Simples Híbrido (IBS/CBS por fora do DAS) <span class="pill-sm pill-blue">Ideal p/ B2B</span></h4>
+          <ul class="detail-list">
+            <li>Você continua no Simples Nacional para IRPJ, CSLL e INSS Patronal (CPP).</li>
+            <li>Mas escolhe apurar o <strong>IBS e a CBS pelo Regime Regular</strong> (por fora do DAS).</li>
+            <li><strong>Vantagem:</strong> Você passa a descontar 100% dos créditos das suas compras de matéria-prima/insumos E transfere <strong>crédito cheio (26,5%)</strong> para o seu cliente empresa!</li>
+            <li><strong>Para quem é perfeito?</strong> Pequenas indústrias, atacadistas e fornecedores que vendem para médias e grandes empresas do Lucro Real/Presumido.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>6.2. MEI, Nanoempreendedor e Motoristas de Aplicativo</h3>
+      <ul class="detail-list">
+        <li><strong>MEI (Faturamento até R$ 81.000/ano):</strong> Continua pagando o boleto fixo mensal (DAS-MEI) de baixo valor.</li>
+        <li><strong>Nanoempreendedor (Pessoa Física com receita até R$ 40.500/ano — 50% do limite do MEI):</strong> Mesmo sem abrir CNPJ, é <strong>100% ISENTO</strong> (não é contribuinte de IBS nem de CBS).</li>
+        <li><strong>Motoristas e Entregadores de Aplicativo Autônomos (PF):</strong> A lei considera apenas <strong>25% da receita bruta</strong> deles para verificar o limite de R$ 40.500/ano. Na prática, um motorista de aplicativo Pessoa Física pode faturar até <strong>R$ 162.000,00 por ano</strong> (R$ 13.500/mês) sem pagar nada de IBS/CBS!</li>
+      </ul>
+
+      <h3>6.3. Resumo Completo das Alíquotas e Regras Especiais por Setor</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Setor Econômico / Profissão</th>
+            <th>Desconto na Alíquota</th>
+            <th class="num">Alíquota Efetiva*</th>
+            <th>Regras Específicas que Você Precisa Saber (LC 214/2025)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Saúde e Educação</strong> (Hospitais, Clínicas, Médicos, Dentistas, Psicólogos, Escolas, Faculdades)</td>
+            <td><strong>Redução de 60%</strong></td>
+            <td class="num"><strong>10,60%</strong></td>
+            <td>Mais de 380 medicamentos graves e vacinas têm <strong>Alíquota Zero (0%)</strong>. Demais medicamentos registrados na ANVISA têm redução de 60% (10,60%).</td>
+          </tr>
+          <tr>
+            <td><strong>Agronegócio e Produtor Rural</strong></td>
+            <td><strong>Redução de 60%</strong></td>
+            <td class="num"><strong>10,60%</strong></td>
+            <td>Produtor rural (PF ou PJ) com receita anual até <strong>R$ 3,6 milhões/ano</strong> é <strong>isento</strong> de cobrar IBS/CBS e gera crédito presumido para quem compra dele!</td>
+          </tr>
+          <tr>
+            <td><strong>18 Profissões Intelectuais Regulamentadas</strong> (Advogados, Engenheiros, Arquitetos, Contadores, Administradores, Economistas, Veterinários, etc.)</td>
+            <td><strong>Redução de 30%</strong></td>
+            <td class="num"><strong>18,55%</strong></td>
+            <td>Válido para sociedades compostas por profissionais da mesma área fiscalizadas por Conselho Profissional. Quando vendem para empresas (B2B), geram 100% de crédito!</td>
+          </tr>
+          <tr>
+            <td><strong>Bares, Restaurantes, Hotéis e Parques Temáticos</strong></td>
+            <td><strong>Redução de 40%</strong></td>
+            <td class="num"><strong>15,90%</strong></td>
+            <td>Gorjetas (até 15%) e taxa de entrega de delivery terceirizado são excluídas da base de cálculo dos bares e restaurantes.</td>
+          </tr>
+          <tr>
+            <td><strong>Venda de Imóveis e Construção Civil</strong> (Incorporadoras, Construtoras, Empreiteiras, Administradoras)</td>
+            <td><strong>Redução de 50%</strong></td>
+            <td class="num"><strong>13,25%</strong></td>
+            <td>Na incorporação residencial, abate-se o <strong>custo do terreno</strong> (Redutor de Ajuste) + <strong>R$ 100.000,00 por apartamento/casa</strong> (ou R$ 30 mil por lote) + todos os créditos da obra!</td>
+          </tr>
+          <tr>
+            <td><strong>Aluguel (Locação) de Imóveis</strong></td>
+            <td><strong>Redução de 70%</strong></td>
+            <td class="num"><strong>7,95%</strong></td>
+            <td>No aluguel residencial, abate-se <strong>R$ 600,00 por mês</strong> da base! <strong>Pessoa Física</strong> só paga se tiver <strong>mais de 3 imóveis alugados E renda de aluguel &gt; R$ 240.000/ano</strong>.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.84rem; color:var(--muted);">*Considerando a alíquota padrão de referência estimada em 26,50% (8,80% CBS + 17,70% IBS).</p>
+    </article>
+
+    <!-- =================================================================== -->
+    <!-- MÓDULO 7 -->
+    <!-- =================================================================== -->
+    <article class="module" id="mod7">
+      <span class="mod-badge">Módulo 07 &bull; Linha do Tempo</span>
+      <h2>Cronograma Detalhado de Transição: O Que Muda de 2026 a 2033?</h2>
+      <p class="mod-intro">Veja exatamente o que acontece em cada ano até a extinção completa dos impostos antigos em 2033.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Ano</th>
+            <th>Tributos Federais (PIS/COFINS/IPI &rarr; CBS/IS)</th>
+            <th>Tributos Estaduais e Municipais (ICMS/ISS &rarr; IBS)</th>
+            <th>O Que a Empresa Precisa Fazer?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>2026</strong></td>
+            <td><strong>CBS Teste de 0,9%</strong> (Abatida do PIS/COFINS).</td>
+            <td><strong>IBS Teste de 0,1%</strong> (Abatido do PIS/COFINS).</td>
+            <td>Emitir NF-e e NFS-e Padrão Nacional destacando os novos campos <code>&lt;IBSCBS&gt;</code>. Quem emitir corretamente fica dispensado de recolher o 1% adicional.</td>
+          </tr>
+          <tr>
+            <td><strong>2027 e 2028</strong></td>
+            <td><strong>FIM do PIS e da COFINS!</strong><br/>Entra <strong>CBS Cheia (~8,8%)</strong> + <strong>Imposto Seletivo</strong>.<br/><strong>IPI cai a 0%</strong> (exceto proteção da ZFM).</td>
+            <td>ICMS e ISS continuam <strong>100% normais</strong>.<br/>IBS continua em <strong>0,1%</strong> (compensado na CBS).</td>
+            <td>Operar 100% na não cumulatividade federal da CBS e integrar meios de pagamento ao Split Payment. Início do Cashback Federal.</td>
+          </tr>
+          <tr>
+            <td><strong>2029</strong></td>
+            <td>CBS Cheia + Imposto Seletivo.</td>
+            <td>ICMS e ISS caem para <strong>90%</strong>.<br/>IBS sobe para <strong>10%</strong> da alíquota final.</td>
+            <td>Início da transição subnacional e do Cashback do IBS.</td>
+          </tr>
+          <tr>
+            <td><strong>2030</strong></td>
+            <td>CBS Cheia + Imposto Seletivo.</td>
+            <td>ICMS e ISS caem para <strong>80%</strong>.<br/>IBS sobe para <strong>20%</strong> da alíquota final.</td>
+            <td>Convivência proporcional (80% antigo / 20% novo).</td>
+          </tr>
+          <tr>
+            <td><strong>2031</strong></td>
+            <td>CBS Cheia + Imposto Seletivo.</td>
+            <td>ICMS e ISS caem para <strong>70%</strong>.<br/>IBS sobe para <strong>30%</strong> da alíquota final.</td>
+            <td>Convivência proporcional (70% antigo / 30% novo).</td>
+          </tr>
+          <tr>
+            <td><strong>2032</strong></td>
+            <td>CBS Cheia + Imposto Seletivo.</td>
+            <td>ICMS e ISS caem para <strong>60%</strong>.<br/>IBS sobe para <strong>40%</strong> da alíquota final.</td>
+            <td>Último ano de existência do ICMS e do ISS. Homologação de saldos credores de ICMS.</td>
+          </tr>
+          <tr style="background:rgba(16,185,129,0.12); font-weight:700;">
+            <td><strong>2033 em diante</strong></td>
+            <td><strong>100% CBS + Imposto Seletivo</strong></td>
+            <td><strong>FIM TOTAL do ICMS e do ISS!</strong><br/><strong>100% IBS em vigor!</strong></td>
+            <td>Sistema antigo 100% desligado. Saldos credores antigos de ICMS são devolvidos em 240 parcelas mensais corrigidas pelo IPCA.</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- =================================================================== -->
+    <!-- MÓDULO 8: LABORATÓRIO + QUIZ -->
+    <!-- =================================================================== -->
+    <article class="module" id="mod8">
+      <span class="mod-badge">Módulo 08 &bull; Prática Interativa</span>
+      <h2>🧪 Laboratório de Simulação ao Vivo + Quiz de Fixação</h2>
+      <p class="mod-intro">Aprenda testando os números na prática! Altere os valores da cadeia produtiva abaixo para ver como o crédito e o Split Payment funcionam, e depois responda ao Quiz para testar seu conhecimento.</p>
+
+      <!-- SIMULADOR DE CADEIA PRODUTIVA -->
+      <div class="lab-box">
+        <h3 style="margin-top:0;">1. Simulador Interativo: Cadeia Produtiva &amp; Não Cumulatividade</h3>
+        <p style="font-size:0.92rem; color:var(--muted); margin-bottom:16px;">Altere o preço líquido de venda de cada elo da cadeia e a alíquota do IVA Dual para ver quanto cada empresa abate de crédito e quanto recolhe ao governo:</p>
+
+        <div class="lab-inputs">
+          <div>
+            <label for="lab_aliq">Alíquota do IVA Dual (%)</label>
+            <input type="number" id="lab_aliq" value="26.5" step="0.5" oninput="simularCadeia()" />
+          </div>
+          <div>
+            <label for="lab_elo1">1. Preço Líquido Fornecedor Insumo (R$)</label>
+            <input type="number" id="lab_elo1" value="1000" step="100" oninput="simularCadeia()" />
+          </div>
+          <div>
+            <label for="lab_elo2">2. Preço Líquido Indústria (R$)</label>
+            <input type="number" id="lab_elo2" value="2500" step="100" oninput="simularCadeia()" />
+          </div>
+          <div>
+            <label for="lab_elo3">3. Preço Líquido Loja Varejo (R$)</label>
+            <input type="number" id="lab_elo3" value="4000" step="100" oninput="simularCadeia()" />
+          </div>
+        </div>
+
+        <div class="chain-row" style="margin-top:12px;">
+          <div class="chain-card">
+            <div class="step-num">Elo 1: Fornecedor</div>
+            <h5>Venda de Insumos</h5>
+            <div class="line"><span>Débito na NF:</span><span id="c1_deb">R$ 265,00</span></div>
+            <div class="line"><span>Crédito Entrada:</span><span>R$ 0,00</span></div>
+            <div class="line highlight"><span>Paga no Split:</span><span id="c1_pag">R$ 265,00</span></div>
+          </div>
+          <div class="chain-card amber">
+            <div class="step-num">Elo 2: Indústria</div>
+            <h5>Transformação</h5>
+            <div class="line"><span>Débito na NF:</span><span id="c2_deb">R$ 662,50</span></div>
+            <div class="line"><span>(-) Crédito Elo 1:</span><span id="c2_cred">-R$ 265,00</span></div>
+            <div class="line highlight"><span>Paga no Split:</span><span id="c2_pag">R$ 397,50</span></div>
+          </div>
+          <div class="chain-card purple">
+            <div class="step-num">Elo 3: Varejo</div>
+            <h5>Venda ao Consumidor</h5>
+            <div class="line"><span>Débito na NF:</span><span id="c3_deb">R$ 1.060,00</span></div>
+            <div class="line"><span>(-) Crédito Elo 2:</span><span id="c3_cred">-R$ 662,50</span></div>
+            <div class="line highlight"><span>Paga no Split:</span><span id="c3_pag">R$ 397,50</span></div>
+          </div>
+          <div class="chain-card green">
+            <div class="step-num">Fechamento da Cadeia</div>
+            <h5>Consumidor Final</h5>
+            <div class="line"><span>Total no Caixa:</span><span id="cf_tot">R$ 5.060,00</span></div>
+            <div class="line"><span>Soma Paga (1+2+3):</span><span id="cf_imp">R$ 1.060,00</span></div>
+            <div class="line highlight"><span>Cascata (Excesso):</span><span>R$ 0,00!</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUIZ INTERATIVO -->
+      <h3>2. Quiz Interativo de Fixação (Clique na Resposta Certa!)</h3>
+
+      <div class="quiz-item">
+        <h4>Pergunta 1: Uma fábrica compra uma máquina nova por R$ 100.000,00 + R$ 26.500,00 de IBS/CBS e paga R$ 10.000,00 + R$ 2.650,00 de conta de energia elétrica. O que acontece com esses R$ 29.150,00 de impostos pagos nas compras?</h4>
+        <button class="quiz-btn" onclick="responderQuiz(1, false, 'Incorreto! No modelo antigo demorava 48 meses para máquinas, mas na Reforma Tributária o crédito de bens de capital e energia da atividade é 100% imediato!')">A) A fábrica perde o imposto da energia e só recupera o da máquina em 48 parcelas mensais.</button>
+        <button class="quiz-btn" onclick="responderQuiz(1, true, 'Exato! Na Não Cumulatividade Plena (LC 214/2025), tanto a energia elétrica da atividade quanto máquinas e equipamentos (Ativo Imobilizado) geram 100% de crédito imediato!')">B) Viram R$ 29.150,00 de crédito imediato para abater do IBS/CBS que a fábrica cobrar nas suas vendas.</button>
+        <div id="q1_fb" class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-item">
+        <h4>Pergunta 2: João é Pessoa Física, tem 2 apartamentos alugados e recebe R$ 5.000,00 por mês de aluguel (R$ 60.000,00 por ano). Ele terá que pagar IBS e CBS sobre esses aluguéis?</h4>
+        <button class="quiz-btn" onclick="responderQuiz(2, true, 'Perfeito! Pela LC 214/2025 (art. 251), a Pessoa Física só vira contribuinte de IBS/CBS na locação se tiver MAIS de 3 imóveis alugados E receita anual de aluguel ACIMA de R$ 240.000,00!')">A) Não! Ele é 100% isento de IBS e CBS porque tem até 3 imóveis e recebe menos de R$ 240.000,00/ano.</button>
+        <button class="quiz-btn" onclick="responderQuiz(2, false, 'Incorreto! Pessoas físicas com até 3 imóveis alugados (ou receita de aluguel até R$ 240 mil/ano) NÃO são contribuintes de IBS/CBS.')">B) Sim, qualquer pessoa física que alugue 1 imóvel terá que pagar 26,5% de IVA.</button>
+        <div id="q2_fb" class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-item">
+        <h4>Pergunta 3: Uma pequena empresa do Simples Nacional vende 100% dos seus produtos para Pessoas Físicas (consumidores finais do bairro). Qual é a melhor opção para ela na Reforma Tributária?</h4>
+        <button class="quiz-btn" onclick="responderQuiz(3, true, 'Correto! Como o consumidor final (Pessoa Física) não aproveita crédito tributário, ficar 100% dentro do DAS (Simples Puro) garante uma alíquota menor e menos burocracia.')">A) Continuar no Simples Puro (pagando IBS e CBS reduzidos dentro do DAS mensal).</button>
+        <button class="quiz-btn" onclick="responderQuiz(3, false, 'Incorreto! O Simples Híbrido (pagar IBS/CBS por fora do DAS) só é vantajoso para quem vende para outras empresas (B2B) que exigem crédito cheio.')">B) Sair do DAS e pagar a alíquota cheia de 26,5% por fora.</button>
+        <div id="q3_fb" class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-item">
+        <h4>Pergunta 4: No Ano-Teste de 2026, as notas fiscais destacam 0,9% de CBS e 0,1% de IBS (total de 1%). Isso significa que os preços e impostos sobem 1% em 2026?</h4>
+        <button class="quiz-btn" onclick="responderQuiz(4, false, 'Incorreto! Em 2026 não há aumento de carga tributária: o 1% é integralmente abatido do PIS/COFINS ou dispensado para quem cumprir a emissão das notas.')">A) Sim, é um imposto extra de 1% sem compensação.</button>
+        <button class="quiz-btn" onclick="responderQuiz(4, true, 'Exato! O 1% de 2026 (0,9% CBS + 0,1% IBS) é um teste de sistemas e calibragem, sendo 100% compensado com o PIS/COFINS devido pela empresa.')">B) Não! Esse 1% é 100% compensado/abatido do PIS e da COFINS (ou dispensado para quem cumprir as obrigações acessórias).</button>
+        <div id="q4_fb" class="quiz-feedback"></div>
+      </div>
+
+    </article>
+
+  </main>
+</div>
+
+<footer>
+  <p>Curso Completo da Reforma Tributária (EC 132/2023 e LC 214/2025) &bull; <a href="./index.html">Portal Mestre</a> &bull; <a href="./etapa-07-construcao-civil-exemplos-praticos/construcao-civil-reforma-tributaria.html">Dossiê Construção Civil</a></p>
+</footer>
+
+<script>
+  function brl(v) {
+    return v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  }
+
+  function simularCadeia() {
+    const aliq = Math.max(0, (parseFloat(document.getElementById('lab_aliq').value) || 0) / 100);
+    const p1 = Math.max(0, parseFloat(document.getElementById('lab_elo1').value) || 0);
+    const p2 = Math.max(0, parseFloat(document.getElementById('lab_elo2').value) || 0);
+    const p3 = Math.max(0, parseFloat(document.getElementById('lab_elo3').value) || 0);
+
+    const deb1 = p1 * aliq;
+    const pag1 = deb1;
+
+    const deb2 = p2 * aliq;
+    const pag2 = deb2 - deb1;
+
+    const deb3 = p3 * aliq;
+    const pag3 = deb3 - deb2;
+
+    const totCaixa = p3 + deb3;
+    const somaGoverno = pag1 + pag2 + pag3;
+
+    document.getElementById('c1_deb').textContent = brl(deb1);
+    document.getElementById('c1_pag').textContent = brl(pag1);
+
+    document.getElementById('c2_deb').textContent = brl(deb2);
+    document.getElementById('c2_cred').textContent = '-' + brl(deb1);
+    document.getElementById('c2_pag').textContent = brl(pag2);
+
+    document.getElementById('c3_deb').textContent = brl(deb3);
+    document.getElementById('c3_cred').textContent = '-' + brl(deb2);
+    document.getElementById('c3_pag').textContent = brl(pag3);
+
+    document.getElementById('cf_tot').textContent = brl(totCaixa);
+    document.getElementById('cf_imp').textContent = brl(somaGoverno);
+  }
+
+  function responderQuiz(num, correto, texto) {
+    const el = document.getElementById('q' + num + '_fb');
+    el.style.display = 'block';
+    if (correto) {
+      el.style.background = 'rgba(16, 185, 129, 0.16)';
+      el.style.border = '1px solid #10b981';
+      el.style.color = '#a7f3d0';
+      el.innerHTML = '<strong>✅ Resposta Correta!</strong> ' + texto;
+    } else {
+      el.style.background = 'rgba(239, 68, 68, 0.16)';
+      el.style.border = '1px solid #ef4444';
+      el.style.color = '#fecaca';
+      el.innerHTML = '<strong>❌ Tente novamente:</strong> ' + texto;
+    }
+  }
+</script>
+</body>
+</html>

@@ -10,6 +10,7 @@
 
 Para visualizar os diagramas coloridos, tabelas comparativas expandidas e usar a **Calculadora Interativa em JavaScript** direto no navegador, abra os arquivos `.html` abaixo:
 
+- **[`curso-completo-reforma-tributaria.html`](./curso-completo-reforma-tributaria.html)** — **🎓 Curso Completo Passo a Passo (Apostila Digital HTML do Zero ao Avançado em 8 Módulos + Simulador de Cadeia Produtiva + Quiz Interativo)**
 - **[`index.html`](./index.html)** — **Portal Mestre Interativo da Reforma Tributária (Todas as 7 Etapas)**
 - **[`etapa-07-construcao-civil-exemplos-praticos/construcao-civil-reforma-tributaria.html`](./etapa-07-construcao-civil-exemplos-praticos/construcao-civil-reforma-tributaria.html)** — **Dossiê HTML Detalhado da Construção Civil (Os 5 Perfis + 3 Exemplos Práticos + Simulador ao Vivo de Incorporação e Obras)**
 
