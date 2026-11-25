@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal Mestre da Reforma Tributária no Brasil (EC 132/2023 e LC 214/2025) — 7 Etapas</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --bg-panel: #1e293b;
+      --bg-card: #151f32;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-hover: #0284c7;
+      --success: #10b981;
+      --amber: #f59e0b;
+      --danger: #ef4444;
+      --purple: #a855f7;
+      --border: #334155;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .hero {
+      background: linear-gradient(135deg, #090d16 0%, #1e3a8a 55%, #0369a1 100%);
+      padding: 52px 24px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero .pill {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.16);
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-size: 2.35rem;
+      max-width: 980px;
+      margin: 0 auto 12px;
+      line-height: 1.22;
+    }
+    .hero p {
+      color: #cbd5e1;
+      max-width: 860px;
+      margin: 0 auto 22px;
+      font-size: 1.06rem;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--amber);
+      color: #090d16;
+      font-weight: 800;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-size: 0.96rem;
+      transition: transform 0.15s;
+      margin: 4px;
+    }
+    .cta-btn:hover { transform: translateY(-2px); }
+    .cta-btn.secondary {
+      background: var(--primary);
+    }
+    .sticky-tabs {
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      background: #0f172a;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+    }
+    .sticky-tabs a {
+      color: var(--text);
+      text-decoration: none;
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      padding: 7px 13px;
+      border-radius: 8px;
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+    .sticky-tabs a:hover {
+      background: var(--primary-hover);
+      border-color: var(--primary);
+    }
+    .main {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 36px 20px 80px;
+    }
+    section {
+      margin-bottom: 56px;
+      scroll-margin-top: 72px;
+    }
+    .stage-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: #090d16;
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 3px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    h2.sec-head {
+      font-size: 1.75rem;
+      color: #fff;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+    }
+    p.sec-desc {
+      color: var(--muted);
+      margin-bottom: 22px;
+      font-size: 1.02rem;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 20px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+    .card h3 {
+      font-size: 1.18rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .badge-sm {
+      font-size: 0.75rem;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-weight: 700;
+      background: rgba(56, 189, 248, 0.16);
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+    .badge-sm.green { background: rgba(16, 185, 129, 0.16); color: var(--success); border-color: var(--success); }
+    .badge-sm.amber { background: rgba(245, 158, 11, 0.16); color: var(--amber); border-color: var(--amber); }
+    .badge-sm.purple { background: rgba(168, 85, 247, 0.16); color: var(--purple); border-color: var(--purple); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--bg-panel);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      margin: 16px 0;
+    }
+    th, td {
+      padding: 12px 15px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      font-size: 0.93rem;
+    }
+    th {
+      background: #090d16;
+      color: var(--primary);
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.5px;
+    }
+    .num { text-align: right; font-family: monospace; font-weight: 600; }
+    .diagram-box {
+      background: #080c14;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      margin: 18px 0;
+    }
+    .flow-chain {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .step-box {
+      background: var(--bg-panel);
+      border: 2px solid var(--primary);
+      border-radius: 10px;
+      padding: 14px 16px;
+      min-width: 200px;
+      max-width: 270px;
+      text-align: center;
+    }
+    .step-box.green { border-color: var(--success); }
+    .step-box.amber { border-color: var(--amber); }
+    .step-box.purple { border-color: var(--purple); }
+    .step-box h4 { font-size: 0.96rem; margin-bottom: 4px; color: #fff; }
+    .step-box p { font-size: 0.82rem; color: var(--muted); }
+    .step-box .val { font-family: monospace; font-weight: 700; color: var(--primary); margin-top: 6px; font-size: 0.9rem; }
+    .step-box.green .val { color: var(--success); }
+    .step-box.amber .val { color: var(--amber); }
+    .arrow { font-size: 1.5rem; color: var(--muted); font-weight: bold; }
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .time-card {
+      background: var(--bg-card);
+      border-top: 4px solid var(--primary);
+      border-radius: 10px;
+      padding: 16px;
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .time-card.highlight { border-top-color: var(--amber); }
+    .time-card.done { border-top-color: var(--success); }
+    .time-card .year {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .time-card.highlight .year { color: var(--amber); }
+    .time-card.done .year { color: var(--success); }
+    ul.bullets {
+      list-style: none;
+      margin-top: 8px;
+    }
+    ul.bullets li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 7px;
+      font-size: 0.92rem;
+      color: #e2e8f0;
+    }
+    ul.bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 32px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="pill">Guia Mestre Interativo &bull; EC 132/2023 &amp; Lei Complementar nº 214/2025</span>
+  <h1>📘 Tudo Sobre a Reforma Tributária no Brasil</h1>
+  <p>Documentação didática completa em <strong>7 Etapas</strong> com fluxogramas visuais, fórmulas matemáticas, cronograma 2026–2033, aplicação por setor e dossiê especial da <strong>Construção Civil (3 Exemplos Práticos)</strong>.</p>
+  <div>
+    <a class="cta-btn" href="./etapa-07-construcao-civil-exemplos-praticos/construcao-civil-reforma-tributaria.html">🏗️ Abrir Dossiê Detalhado da Construção Civil (HTML + Simulador)</a>
+    <a class="cta-btn secondary" href="#etapa7">Ver Resumo dos 3 Exemplos de Construção Civil</a>
+  </div>
+</div>
+
+<div class="sticky-tabs">
+  <a href="#etapa1">Etapa 1: Antes vs. Depois</a>
+  <a href="#etapa2">Etapa 2: Créditos, Split e Cashback</a>
+  <a href="#etapa3">Etapa 3: Cronograma 2026–2033</a>
+  <a href="#etapa4">Etapa 4: Onde se Aplica por Setor</a>
+  <a href="#etapa5">Etapa 5: Simulações Gerais</a>
+  <a href="#etapa6">Etapa 6: Sistemas, NF-e &amp; QA Fiscal</a>
+  <a href="#etapa7">Etapa 7: Construção Civil (3 Exemplos)</a>
+</div>
+
+<div class="main">
+
+  <!-- ETAPA 1 -->
+  <section id="etapa1">
+    <span class="stage-badge">Etapa 01</span>
+    <h2 class="sec-head">O Que Muda: 5 Tributos Antigos &rarr; IVA Dual (CBS + IBS) + Imposto Seletivo</h2>
+    <p class="sec-desc">O sistema antigo cobrava imposto "por dentro", gerava efeito cascata (cumulatividade) e alimentava a guerra fiscal entre Estados e Municípios. O novo modelo unifica bens e serviços no <strong>IVA Dual</strong>.</p>
+
+    <div class="diagram-box">
+      <div class="flow-chain">
+        <div class="step-box amber">
+          <h4>PIS + COFINS + IPI</h4>
+          <p>3 Tributos Federais Antigos</p>
+          <div class="val">Extintos em 2027 (IPI=0% exceto ZFM)</div>
+        </div>
+        <div class="arrow">&rarr;</div>
+        <div class="step-box green">
+          <h4>CBS + Imposto Seletivo</h4>
+          <p>Competência: União (Federal)</p>
+          <div class="val">CBS (~8,8%) + IS ("Pecado")</div>
+        </div>
+        <div class="arrow">|</div>
+        <div class="step-box amber">
+          <h4>ICMS + ISS</h4>
+          <p>27 Leis Estaduais + 5.570 Municipais</p>
+          <div class="val">Transição 2029 a 2032</div>
+        </div>
+        <div class="arrow">&rarr;</div>
+        <div class="step-box green">
+          <h4>IBS (Estadual + Municipal)</h4>
+          <p>1 Lei Nacional Única (LC 214/2025)</p>
+          <div class="val">IBS (~17,7%) no Destino</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>1. CBS <span class="badge-sm">Federal</span></h3>
+        <p style="font-size:0.92rem; color:var(--muted);"><strong>Contribuição sobre Bens e Serviços:</strong> Substitui PIS, COFINS e parte do IPI a partir de 2027. Não cumulativa, calculada "por fora" e com crédito amplo.</p>
+      </div>
+      <div class="card">
+        <h3>2. IBS <span class="badge-sm green">Estadual + Municipal</span></h3>
+        <p style="font-size:0.92rem; color:var(--muted);"><strong>Imposto sobre Bens e Serviços:</strong> Substitui o ICMS e o ISS entre 2029 e 2033. Tem exatamente as mesmas regras da CBS e é 100% arrecadado para o destino.</p>
+      </div>
+      <div class="card">
+        <h3>3. Imposto Seletivo (IS) <span class="badge-sm amber">Extrafiscal</span></h3>
+        <p style="font-size:0.92rem; color:var(--muted);">Sobretaxa produtos nocivos à saúde e ao meio ambiente: cigarros, bebidas alcoólicas, bebidas açucaradas, veículos poluentes, mineração (até 0,25%) e apostas (bets).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ETAPA 2 -->
+  <section id="etapa2">
+    <span class="stage-badge">Etapa 02</span>
+    <h2 class="sec-head">Como Funciona na Prática: Crédito Amplo, Split Payment e Cashback</h2>
+    <p class="sec-desc">Três pilares operacionais garantem transparência, fim da sonegação e justiça fiscal para famílias de baixa renda.</p>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>Crédito Financeiro Amplo <span class="badge-sm green">Não Cumulatividade</span></h3>
+        <ul class="bullets">
+          <li><strong>Cálculo "Por Fora":</strong> Produto R$ 1.000 + 26,5% IVA = NF de R$ 1.265,00.</li>
+          <li><strong>Tudo da atividade dá crédito:</strong> Matéria-prima, mercadorias, energia elétrica, aluguel comercial, frete, softwares (SaaS), marketing e compra de máquinas (crédito imediato!).</li>
+          <li><strong>O que não dá crédito:</strong> Uso/consumo pessoal (joias, lazer) e folha de salários CLT.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Split Payment Inteligente <span class="badge-sm">Tempo Real</span></h3>
+        <ul class="bullets">
+          <li>No pagamento via <strong>PIX, Cartão ou Boleto</strong>, o banco consulta o sistema da Receita/Comitê Gestor.</li>
+          <li><strong>Abate créditos automaticamente:</strong> Se a venda tem R$ 270 de imposto, mas o vendedor já tinha R$ 200 de crédito de compras anteriores, o banco retém apenas R$ 70 para o governo e deposita R$ 1.200 para a empresa!</li>
+          <li>Libera o crédito instantaneamente para o comprador B2B.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Cesta Básica 0% e Cashback <span class="badge-sm amber">Justiça Social</span></h3>
+        <ul class="bullets">
+          <li><strong>Alíquota Zero (0%):</strong> Arroz, feijão, carnes, leite, manteiga, queijos, café, açúcar, pão francês, farinhas, óleo de soja, frutas, legumes e ovos.</li>
+          <li><strong>Cashback (CadÚnico até 1/2 SM per capita):</strong> Devolve <strong>100% da CBS e 20% do IBS</strong> nas contas de luz, água, esgoto, telecom e botijão de gás (13 kg), e <strong>20% de CBS/IBS</strong> nas demais compras com CPF.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ETAPA 3 -->
+  <section id="etapa3">
+    <span class="stage-badge">Etapa 03</span>
+    <h2 class="sec-head">Cronograma Oficial de Transição (2026 a 2033)</h2>
+    <p class="sec-desc">A implantação ocorre ao longo de 7 anos para testar sistemas, calibrar as alíquotas sem aumento de carga tributária e substituir gradualmente os tributos antigos.</p>
+
+    <div class="timeline">
+      <div class="time-card highlight">
+        <div class="year">2026</div>
+        <strong>Ano-Teste (1,0%)</strong>
+        <p style="font-size:0.86rem; color:var(--muted); margin-top:6px;">Destaque na NF de <strong>0,9% CBS + 0,1% IBS</strong>. É 100% compensado com PIS/COFINS (não há aumento de imposto).</p>
+      </div>
+      <div class="time-card">
+        <div class="year">2027–2028</div>
+        <strong>Virada Federal</strong>
+        <p style="font-size:0.86rem; color:var(--muted); margin-top:6px;"><strong>Fim do PIS e COFINS!</strong> Entra CBS cheia, Imposto Seletivo e Cashback da CBS. IPI cai a 0% (exceto ZFM). IBS segue 0,1%.</p>
+      </div>
+      <div class="time-card">
+        <div class="year">2029</div>
+        <strong>Transição 10% IBS</strong>
+        <p style="font-size:0.86rem; color:var(--muted); margin-top:6px;">ICMS e ISS caem para <strong>90%</strong>. IBS sobe para <strong>10%</strong> da alíquota definitiva. Início do Cashback do IBS.</p>
+      </div>
+      <div class="time-card">
+        <div class="year">2030</div>
+        <strong>Transição 20% IBS</strong>
+        <p style="font-size:0.86rem; color:var(--muted); margin-top:6px;">ICMS e ISS caem para <strong>80%</strong> das alíquotas atuais. IBS sobe para <strong>20%</strong>.</p>
+      </div>
+      <div class="time-card">
+        <div class="year">2031–2032</div>
+        <strong>Transição 30% e 40%</strong>
+        <p style="font-size:0.86rem; color:var(--muted); margin-top:6px;">Em 2031: ICMS/ISS 70% e IBS 30%.<br/>Em 2032: ICMS/ISS 60% e IBS 40%.</p>
+      </div>
+      <div class="time-card done">
+        <div class="year">2033</div>
+        <strong>100% Novo Modelo</strong>
+        <p style="font-size:0.86rem; color:var(--muted); margin-top:6px;"><strong>Extinção total do ICMS e do ISS!</strong> Vigência 100% integral do IVA Dual (CBS + IBS) e Imposto Seletivo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ETAPA 4 -->
+  <section id="etapa4">
+    <span class="stage-badge">Etapa 04</span>
+    <h2 class="sec-head">Onde se Aplica por Setor, Simples Nacional, MEI e Regimes Diferenciados</h2>
+    <p class="sec-desc">Resumo completo das alíquotas reduzidas e regras de enquadramento para empresas e pessoas físicas na LC 214/2025.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Setor / Regime</th>
+          <th>Regra na Reforma Tributária (LC 214/2025)</th>
+          <th class="num">Redução</th>
+          <th class="num">Alíquota Estimada*</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Cesta Básica, Vacinas, Medicamentos Graves, Transporte Público Urbano, PROUNI</strong></td>
+          <td>Alíquota Zero em todo o território nacional.</td>
+          <td class="num"><strong>-100%</strong></td>
+          <td class="num" style="color:var(--success);">0,00%</td>
+        </tr>
+        <tr>
+          <td><strong>Locação (Aluguel), Cessão e Arrendamento de Imóveis</strong></td>
+          <td>Redução de 70% na alíquota + <strong>Redutor Social de R$ 600/mês</strong> no aluguel residencial. (PF com até 3 imóveis ou até R$ 240 mil/ano é isenta!).</td>
+          <td class="num"><strong>-70%</strong></td>
+          <td class="num">7,95%</td>
+        </tr>
+        <tr>
+          <td><strong>Saúde, Educação, Medicamentos ANVISA, Agropecuária e Insumos Agro, Cultura</strong></td>
+          <td>Redução de 60% na alíquota padrão. Produtor rural até R$ 3,6 milhões/ano é isento (gera crédito presumido).</td>
+          <td class="num"><strong>-60%</strong></td>
+          <td class="num">10,60%</td>
+        </tr>
+        <tr>
+          <td><strong>Construção Civil, Incorporação Imobiliária, Loteamento e Administração de Obras</strong></td>
+          <td>Redução de 50% na alíquota + Redutor de Ajuste (Terreno) + Redutor Social (R$ 100 mil/apto ou R$ 30 mil/lote).</td>
+          <td class="num"><strong>-50%</strong></td>
+          <td class="num" style="color:var(--primary);">13,25%</td>
+        </tr>
+        <tr>
+          <td><strong>Bares, Restaurantes, Hotéis, Parques de Diversão e Aviação Regional</strong></td>
+          <td>Regime específico com redução de 40% na alíquota padrão.</td>
+          <td class="num"><strong>-40%</strong></td>
+          <td class="num">15,90%</td>
+        </tr>
+        <tr>
+          <td><strong>18 Profissões Intelectuais Regulamentadas (Engenharia, Arquitetura, Advocacia, Contabilidade...)</strong></td>
+          <td>Redução de 30% para sociedades de profissionais habilitados submetidos a conselho (Art. 127).</td>
+          <td class="num"><strong>-30%</strong></td>
+          <td class="num">18,55%</td>
+        </tr>
+        <tr>
+          <td><strong>Simples Nacional, MEI e Nanoempreendedor</strong></td>
+          <td><strong>Simples Puro:</strong> paga no DAS (ideal B2C). <strong>Simples Híbrido:</strong> paga IBS/CBS por fora para transferir crédito cheio (ideal B2B). <strong>Nanoempreendedor PF</strong> até R$ 40.500/ano é 100% isento.</td>
+          <td class="num">Regime Próprio</td>
+          <td class="num">Tabela DAS</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ETAPA 5 E 6 -->
+  <section id="etapa5">
+    <span class="stage-badge">Etapas 05 e 06</span>
+    <h2 class="sec-head">Simulações Gerais, Adequação de Sistemas (NF-e/ERP) e Qualidade de Software (QA)</h2>
+    <p class="sec-desc">A Reforma exige novos campos XML (<code>&lt;IBSCBS&gt;</code> e <code>&lt;IS&gt;</code>) e validação rigorosa de software segundo a <strong>ISO/IEC 25010:2023</strong> e técnicas do <strong>ISTQB CTFL v4.0</strong>.</p>
+
+    <div class="grid-2" id="etapa6">
+      <div class="card">
+        <h3>Comércio e Serviços B2B <span class="badge-sm green">Simulação Etapa 05</span></h3>
+        <ul class="bullets">
+          <li><strong>Varejo (Entradas vs. Saídas):</strong> Loja que fatura R$ 180 mil (débito R$ 47.700) desconta créditos de mercadorias (R$ 26.500), energia/internet (R$ 1.060), ERP/marketing (R$ 1.590) e aluguel da loja (R$ 795) = <strong>R$ 29.945 de créditos</strong>, recolhendo apenas <strong>R$ 17.755</strong> (9,86% efetivo).</li>
+          <li><strong>Serviços B2B:</strong> Todo o IBS/CBS destacado "por fora" na nota de TI, consultoria ou engenharia é recuperado 100% como crédito pelo cliente PJ.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Engenharia de QA Fiscal <span class="badge-sm purple">ISO 25010:2023 &amp; ISTQB 4.0</span></h3>
+        <ul class="bullets">
+          <li><strong>ISO/IEC 25010:2023 (9 Características):</strong> Corretude Funcional (arredondamento e redutores), Interoperabilidade (APIs Split Payment), Modificabilidade (tabelas de vigência 2026–2033) e Flexibilidade (5.570 municípios de destino).</li>
+          <li><strong>ISTQB CTFL 4.0:</strong> Aplicação de <em>Tabela de Decisão</em> e <em>Análise de Valor-Limite</em> (ex.: fronteira de R$ 240.000,00 vs R$ 240.000,01 e 3 vs 4 imóveis para locador PF; limite de R$ 600,00 no redutor social).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ETAPA 7: CONSTRUÇÃO CIVIL -->
+  <section id="etapa7">
+    <span class="stage-badge">Etapa 07 &bull; Destaque Setorial</span>
+    <h2 class="sec-head">🏗️ Construção Civil: Os 3 Exemplos Práticos Completos</h2>
+    <p class="sec-desc">Síntese executiva dos 3 cenários práticos envolvendo <strong>Incorporadora, Construtora, Empreiteira, Administradora de Obras, Especialistas e Serviços Complementares</strong>. Para ver todos os fluxogramas e usar a calculadora interativa, acesse a página dedicada.</p>
+
+    <div class="grid-3">
+      <div class="card" style="border-color:var(--primary);">
+        <h3>Exemplo 1: Incorporação <span class="badge-sm">10 Aptos = R$ 5,0 Mi</span></h3>
+        <ul class="bullets">
+          <li><strong>VGV:</strong> R$ 5.000.000,00</li>
+          <li><strong>(-) Redutor Terreno:</strong> -R$ 1.000.000,00</li>
+          <li><strong>(-) Redutor Social (10 &times; R$ 100 mil):</strong> -R$ 1.000.000,00</li>
+          <li><strong>(=) Base Tributável:</strong> R$ 3.000.000,00</li>
+          <li><strong>Débito Bruto (13,25%):</strong> R$ 397.500,00</li>
+          <li><strong>Créditos da Obra:</strong> Projetos (R$ 37,1 mil) + Serv. Complem. (R$ 53 mil) + Materiais 26,5% (R$ 318 mil) + Empreiteira (R$ 106 mil) = <strong>R$ 514.100,00</strong></li>
+          <li><strong>Resultado:</strong> <strong>R$ 0,00 a pagar</strong> + Saldo Credor de <strong>R$ 116.600,00</strong>!</li>
+        </ul>
+      </div>
+
+      <div class="card" style="border-color:var(--success);">
+        <h3>Exemplo 2: Construtora B2B <span class="badge-sm green">Galpão R$ 2,0 Mi</span></h3>
+        <ul class="bullets">
+          <li><strong>Contrato Empreitada Global:</strong> R$ 2.000.000,00 líquidos para uma Indústria.</li>
+          <li><strong>Créditos da Construtora:</strong> Materiais R$ 900 mil (créd. R$ 238,5 mil a 26,5%) + Empreiteira R$ 400 mil (créd. R$ 53 mil) + Serv. Complem. R$ 200 mil (créd. R$ 26,5 mil) = <strong>R$ 318.000,00</strong>.</li>
+          <li><strong>NF da Construtora:</strong> R$ 2.000.000 + R$ 265.000 (13,25%) = R$ 2.265.000,00.</li>
+          <li><strong>Na Indústria Cliente:</strong> Recupera <strong>100% dos R$ 265.000,00</strong> como crédito de Ativo Imobilizado! Custo real = R$ 2,0 Mi.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="border-color:var(--amber);">
+        <h3>Exemplo 3: Administradora <span class="badge-sm amber">Casa PF R$ 1,12 Mi</span></h3>
+        <ul class="bullets">
+          <li><strong>Custos Líquidos:</strong> Projetos R$ 100 mil + Materiais R$ 500 mil + Empreiteiras R$ 400 mil + Taxa Adm. R$ 120 mil = R$ 1.120.000,00.</li>
+          <li><strong>Na Administradora:</strong> Paga 13,25% apenas sobre a Taxa (R$ 120 mil &rarr; <strong>R$ 15.900,00</strong>).</li>
+          <li><strong>Comparativo para o Dono PF:</strong>
+            <br/>&bull; <em>Obra por Administração (CPF compra materiais a 26,5% sem crédito):</em> Imposto total = <strong>R$ 219.950,00</strong> (Total: R$ 1.339.950).
+            <br/>&bull; <em>Empreitada Global (Construtora toma crédito e fatura tudo a 13,25%):</em> Imposto total = <strong>R$ 148.400,00</strong> (<strong>Economia de R$ 71.550,00!</strong>).
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:26px;">
+      <a class="cta-btn" href="./etapa-07-construcao-civil-exemplos-praticos/construcao-civil-reforma-tributaria.html">🚀 Abrir Página HTML Completa da Construção Civil com Simulador Interativo</a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>Repositório Completo da Reforma Tributária (EC 132/2023 e LC 214/2025) &bull; Engenharia de Qualidade e Documentação Didática</p>
+</footer>
+
+</body>
+</html>
